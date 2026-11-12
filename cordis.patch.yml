@@ -1,0 +1,7 @@
+# dsh-restart-resume bundle patch：把插件行插入 profile roster。
+# 行不带 config：默认值在代码里；profile 的 cordis.patch.yml 可用
+# `- id: restart-resume config: {...}` 覆盖任意子集（补丁替换整份 config，
+# 代码侧会把缺失的键回落到默认值）。
+- insert:
+    - id: restart-resume
+      name: dsh-restart-resume
