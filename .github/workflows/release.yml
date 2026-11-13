@@ -1,0 +1,30 @@
+# Release to npm with trusted publishing (OIDC): no NPM_TOKEN anywhere.
+# Prerequisites, one time per package:
+#   1. the package already exists (a human published the first version);
+#   2. `npm trust github <pkg> --repo Huakira/<repo> --file release.yml --allow-publish`.
+# Every later release: bump the version, push a vX.Y.Z tag.
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+      # Trusted publishing requires npm >= 11.5.1; the bundled one may be older.
+      - run: npm install -g npm@latest
+      - run: npm install --ignore-scripts
+      - run: npm test --if-present
+      - run: npm publish --access public

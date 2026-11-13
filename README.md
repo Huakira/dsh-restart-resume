@@ -27,7 +27,7 @@ turn/end { "kind": "aborted", "reason": { "kind": "disposed" } }
 ## 安装
 
 ```sh
-dsh plugin --profile web add github:Huakira/dsh-restart-resume
+dsh plugin --profile web add @huakira/restart-resume
 ```
 
 装完重启 dsh。
