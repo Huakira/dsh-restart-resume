@@ -4,4 +4,4 @@
 # 代码侧会把缺失的键回落到默认值）。
 - insert:
     - id: restart-resume
-      name: @huakirax/dsh-restart-resume
+      name: "@huakirax/dsh-restart-resume"
