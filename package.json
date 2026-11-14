@@ -1,5 +1,5 @@
 {
-  "name": "@huakirax/restart-resume",
+  "name": "@huakirax/dsh-restart-resume",
   "version": "0.1.0",
   "description": "DeepSeek Harness plugin: after a clean dsh restart, automatically resumes sessions whose last turn was closed as aborted/disposed (host disposal) — the signal every existing resume plugin skips.",
   "keywords": [
